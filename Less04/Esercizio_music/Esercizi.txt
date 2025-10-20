@@ -1,0 +1,129 @@
+## 1. SELECT - Base (10 esercizi)
+
+1. Seleziona tutti gli artisti dalla tabella artists
+2. Mostra solo i nomi degli artisti
+3. Trova tutti gli album con il loro nome
+4. Elenca tutte le canzoni mostrando titolo e numero di traccia
+5. Mostra i primi 5 artisti
+6. Trova l'artista con _id = 10
+7. Seleziona tutti gli album dove artist = 36 (Black Sabbath)
+8. Mostra le canzoni con track maggiore di 5
+9. Trova tutti gli album il cui nome contiene "Live"
+10. Elenca le canzoni ordinate per titolo
+
+## 2. SELECT DISTINCT (10 esercizi)
+
+1. Trova tutti i valori unici di artist dalla tabella albums
+2. Quanti artisti diversi hanno album nel database?
+3. Mostra gli album_id unici dalla tabella songs
+4. Trova tutti i numeri di traccia unici presenti
+5. Elenca gli artisti che hanno almeno un album
+6. Trova i track numbers che appaiono più volte
+7. Mostra gli artist_id che hanno sia album che canzoni
+8. Conta quanti album diversi ci sono
+9. Trova gli artisti con nome che inizia per 'B' (valori distinti)
+10. Mostra tutti i numeri di traccia ordinati
+
+## 3. WHERE e Filtri (10 esercizi)
+
+1. Trova gli artisti il cui nome inizia con 'Black'
+2. Seleziona gli album dell'artista con id 64 (Led Zeppelin)
+3. Trova le canzoni con track = 1 (prime tracce degli album)
+4. Mostra gli artisti con nome che contiene 'Zeppelin'
+5. Trova gli album dove artist è tra 1 e 10
+6. Seleziona le canzoni il cui titolo finisce con 'Love'
+7. Trova gli artisti il cui nome NON inizia con 'The'
+8. Mostra gli album con id maggiore di 50
+9. Trova le canzoni dove track è dispari (track % 2 = 1)
+10. Seleziona gli artisti con esattamente 2 parole nel nome
+
+## 4. ORDER BY (10 esercizi)
+
+1. Ordina tutti gli artisti alfabeticamente
+2. Mostra gli album ordinati per artist (crescente)
+3. Elenca le canzoni ordinate per track (decrescente)
+4. Ordina gli artisti per nome in ordine inverso
+5. Mostra gli album ordinati prima per artist, poi per name
+6. Trova le prime 10 canzoni ordinate per title
+7. Ordina gli artisti per lunghezza del nome
+8. Mostra le canzoni ordinate per album e poi per track
+9. Elenca gli ultimi 5 artisti in ordine alfabetico
+10. Ordina gli album per id decrescente
+
+## 5. COUNT (10 esercizi)
+
+1. Conta quanti artisti ci sono in totale
+2. Quanti album ha l'artista 56 (Rolling Stones)?
+3. Conta quante canzoni ci sono nel database
+4. Quanti album ci sono in totale?
+5. Conta gli artisti il cui nome inizia con 'B'
+6. Quante canzoni hanno track = 1?
+7. Conta gli album per ogni artista (GROUP BY artist)
+8. Quanti artisti hanno nome con più di 10 caratteri?
+9. Conta le canzoni per ogni album
+10. Quanti artisti diversi hanno almeno un album?
+
+## 6. SUM e AVG (10 esercizi)
+
+1. Qual è il numero medio di traccia nelle canzoni?
+2. Somma tutti gli _id degli artisti
+3. Calcola la media degli artist_id negli album
+4. Qual è il track number massimo nel database?
+5. Somma tutti i track numbers delle canzoni
+6. Calcola il numero medio di canzoni per album
+7. Qual è il minimo valore di _id tra gli artisti?
+8. Trova la media dei track per ogni album
+9. Somma i track delle prime 3 canzoni di ogni album
+10. Calcola la media dell'id degli album
+
+## 7. GROUP BY (10 esercizi)
+
+1. Conta quanti album ha ogni artista
+2. Trova il numero di canzoni per ogni album
+3. Mostra gli artisti con più di 2 album
+4. Per ogni track number, conta quante canzoni ci sono
+5. Trova l'album con più canzoni
+6. Raggruppa gli album per artista e conta
+7. Mostra gli artisti ordinati per numero di album (decrescente)
+8. Conta le canzoni per track number, solo per track < 5
+9. Trova gli album con almeno 10 canzoni
+10. Mostra il numero medio di tracce per artista
+
+## 8. INNER JOIN (10 esercizi)
+
+1. Mostra album con i nomi degli artisti
+2. Elenca le canzoni con il nome dell'album
+3. Mostra artisti con i loro album (artist name e album name)
+4. Trova tutte le canzoni con artista e album
+5. Mostra le canzoni di 'Led Zeppelin'
+6. Elenca album e artisti ordinati per nome artista
+7. Trova le prime tracce (track=1) con nome album e artista
+8. Mostra canzoni di artisti il cui nome inizia con 'Black'
+9. Conta quante canzoni ha ogni artista
+10. Trova gli album di artisti con 'Zeppelin' nel nome
+
+## 9. LEFT JOIN (10 esercizi)
+
+1. Mostra tutti gli artisti anche senza album
+2. Trova gli artisti che NON hanno album
+3. Elenca tutti gli album anche senza canzoni
+4. Conta gli album per artista (inclusi artisti senza album)
+5. Mostra gli album senza canzoni
+6. Trova quanti artisti hanno 0 album
+7. Elenca tutti gli artisti con conteggio album (anche 0)
+8. Mostra gli album con conteggio canzoni (anche 0)
+9. Trova gli artisti con nome 'Dio' e i loro album (se esistono)
+10. Elenca tutti gli album con nome artista (se disponibile)
+
+### 10. HAVING (10 esercizi)
+
+Trova gli artisti che hanno più di 5 album
+Mostra gli album con più di 8 canzoni
+Trova i numeri di traccia che appaiono in più di 50 canzoni
+Mostra gli artisti che hanno almeno 3 album e almeno 20 canzoni totali
+Trova gli album dove la media dei track number è maggiore di 5
+Mostra gli artisti il cui nome medio degli album è più lungo di 15 caratteri
+Trova i track number che hanno esattamente 5 canzoni
+Mostra gli artisti che hanno tra 2 e 4 album (inclusi)
+Trova gli album con meno di 5 canzoni
+Mostra gli artisti che hanno più canzoni totali di Led Zeppelin (usa subquery)
