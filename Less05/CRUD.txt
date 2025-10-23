@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS utenti (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    cognome TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    eta INTEGER 
+)
+
+
+
+-- Aggiungi (POST)
+INSERT INTO utenti (nome, cognome, email, eta) 
+VALUES ('Luca', 'Gialli', 'luca@email.com', 35)
+VALUES ('Andrea', 'Rossi', 'rossi@email.com', 65)
+
+-- Modifica (PUT)
+UPDATE utenti 
+SET eta = 36 
+WHERE email = 'luca@email.com'
+
+-- Cancella (DELETE)
+DELETE FROM utenti 
+WHERE eta > 60
+
+-- Verifica prima di confermare (GET)
+SELECT * FROM utenti
