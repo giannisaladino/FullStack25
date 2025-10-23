@@ -49,14 +49,16 @@ SELECT s.title, ar.name as artist_name, al.name as album_name
 FROM songs s
 INNER JOIN albums al ON s.album = al._id
 INNER JOIN artists ar ON al.artist = ar._id
-WHERE ar.name LIKE 'Black%';
+WHERE ar.name LIKE 'Black%'
+ORDER BY artist_name
+;
 
 -- 9. Conta quante canzoni ha ogni artista
 SELECT ar.name, COUNT(s._id) as numero_canzoni
 FROM artists ar
 INNER JOIN albums al ON ar._id = al.artist
 INNER JOIN songs s ON al._id = s.album
-GROUP BY ar.name
+GROUP BY ar._id
 ORDER BY numero_canzoni DESC;
 
 -- 10. Trova gli album di artisti con 'Zeppelin' nel nome

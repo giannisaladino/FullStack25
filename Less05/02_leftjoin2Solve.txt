@@ -1,0 +1,43 @@
+CREATE VIEW "1Elenco di tutti gli utenti con i loro ordini" AS 
+
+-- 1: LEFT JOIN tra "Utenti" e "Ordini"
+/*Questa query recupera tutti gli utenti e i relativi ordini, se presenti. 
+Se un utente non ha ordini, verrà comunque visualizzato nell'output con valori nulli per i campi degli ordini.
+*/
+
+
+--verifica
+INSERT INTO Ordini (ID_Utente, DataOrdine, Importo) VALUES (2, '2024-06-06', 880.00);
+
+
+-------------------------------------------------------------------------------------------------
+-- 2: LEFT JOIN tra "Prodotti" e "Vendite"
+/* Questa query elenca tutti i prodotti e le loro vendite, se presenti. 
+Se un prodotto non è stato venduto, verrà comunque visualizzato nell'output con valori nulli per i campi delle vendite.
+*/
+
+
+-------------------------------------------------------------------------------------------------
+-- 3: LEFT JOIN tra "Categorie" e "Prodotti"
+/*Questa query recupera tutte le categorie e i prodotti appartenenti a ciascuna categoria, se presenti. 
+Se una categoria non ha prodotti, verrà comunque visualizzata nell'output con valori nulli per i campi dei prodotti.
+*/
+
+
+
+-------------------------------------------------------------------------------------------------
+-- 4: LEFT JOIN tra "Clienti" e "Ordini"
+/*Questa query mostra tutti i clienti e i loro ordini, se presenti. Se un cliente non ha ordini, 
+verrà comunque visualizzato nell'output con valori nulli per i campi degli ordini.
+*/
+
+
+
+-------------------------------------------------------------------------------------------------
+-- 5: LEFT JOIN tra "Fornitori" e "Prodotti"
+/* Questa query elenca tutti i fornitori e i prodotti forniti da ciascun fornitore, se presenti.
+Se un fornitore non ha prodotti, verrà comunque visualizzato nell'output con valori nulli per i campi dei prodotti.
+*/
+
+
+

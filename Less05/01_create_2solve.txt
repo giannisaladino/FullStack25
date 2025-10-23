@@ -1,0 +1,72 @@
+CREATE TABLE "bbb" (
+	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"testo"	VARCHAR(10)
+);
+
+CREATE TABLE "ccc" (
+	"id"	INTEGER NOT NULL,
+	"testo"	VARCHAR(10),
+
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+
+INSERT INTO Utenti (testo) VALUES ('Mario');
+
+SELECT * FROM bbb
+-------------------------------------------------------------
+
+-- Esempio 1: Tabella "Utenti" con ID, Nome, Cognome, Email
+
+
+INSERT INTO Utenti ...
+INSERT INTO Utenti ...
+
+-- Esempio 2: Tabella "Prodotti" con ID, nome, Prezzo
+
+
+INSERT INTO Prodotti...
+INSERT INTO Prodotti...
+
+-- Esempio 3: Tabella "Ordini" con ID, ID_Utente, DataOrdine, Importo (REAL)
+
+
+INSERT INTO Ordini ...
+INSERT INTO Ordini ...
+
+-- Esempio 4: Tabella "Categorie" con ID, Nome
+
+INSERT INTO Categorie ...
+INSERT INTO Categorie ...
+
+-- Esempio 5: Tabella "Clienti" con ID, Nome, Cognome, Telefono
+
+INSERT INTO Clienti...
+INSERT INTO Clienti...
+
+-- Esempio 6: Tabella "Dipendenti" con ID, Nome, Cognome, Posizione
+
+INSERT INTO Dipendenti...
+INSERT INTO Dipendenti...
+
+-- Esempio 7: Tabella "Fornitori" con ID, Nome, Contatto
+
+INSERT INTO Fornitori...
+INSERT INTO Fornitori...
+
+-- Esempio 8: Tabella "Vendite" con ID, ID_Prodotto, DataVendita, Quantità
+
+
+INSERT INTO Vendite...
+INSERT INTO Vendite...
+
+-- Esempio 9: Tabella "Recensioni" con ID, ID_Prodotto, Valutazione, Commento
+
+
+INSERT INTO Recensioni...
+INSERT INTO Recensioni...
+
+-- Esempio 10: Tabella "Magazzino" con ID, ID_Prodotto, Quantità
+
+INSERT INTO Magazzino...
+INSERT INTO Magazzino...

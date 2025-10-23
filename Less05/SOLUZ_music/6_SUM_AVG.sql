@@ -1,8 +1,10 @@
 -- 1. Qual è il numero medio di traccia nelle canzoni?
-SELECT AVG(track) as media_track FROM songs;
+SELECT AVG(track) as media_track 
+FROM songs
 
 -- 2. Somma tutti gli _id degli artisti
-SELECT SUM(_id) as somma_id FROM artists;
+SELECT SUM(_id) as somma_id 
+FROM artists;
 
 -- 3. Calcola la media degli artist_id negli album
 SELECT AVG(artist) as media_artist_id FROM albums;
