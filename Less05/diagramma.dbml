@@ -1,0 +1,25 @@
+Table songs [headercolor: #175e7a] {
+	_id integer [ pk, increment, not null, unique ]
+	track integer
+	title text(65535)
+	album integer
+}
+
+Table artists [headercolor: #175e7a] {
+	_id integer [ pk, increment, not null, unique ]
+	name text(65535)
+}
+
+Table album [headercolor: #175e7a] {
+	_id integer [ pk, increment, not null, unique ]
+	name text(65535)
+	artist integer
+}
+
+Ref fk_artists__id_album {
+	artists._id < album.artist [ delete: no action, update: no action ]
+}
+
+Ref fk_album__id_songs {
+	album._id < songs.album [ delete: no action, update: no action ]
+}
