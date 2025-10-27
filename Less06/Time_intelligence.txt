@@ -1,0 +1,142 @@
+CREATE TABLE ordini (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cliente STRING,
+    data_ordine DATE,
+    data_consegna DATE,
+    importo DECIMAL(10,2)
+);
+
+CREATE TABLE dipendenti (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome STRING,
+    data_assunzione DATE,
+    data_nascita DATE,
+    stipendio DECIMAL(10,2)
+);
+
+-- Inserimento dati di esempio
+INSERT INTO ordini (cliente, data_ordine, data_consegna, importo) VALUES
+    ('Mario Rossi', '2026-10-01', '2026-10-05', 150.00),
+    ('Laura Bianchi', '2026-10-15', '2026-10-20', 320.50),
+    ('Giovanni Verdi', '2026-09-20', '2026-09-25', 89.99),
+    ('Anna Neri', '2026-11-01', '2026-11-08', 450.00),
+    ('Paolo Gialli', '2026-10-25', '2026-10-30', 275.80),
+    ('Sofia Blu', '2026-08-10', '2026-08-15', 199.99),
+    ('Marco Viola', '2026-12-05', '2026-12-12', 520.00);
+
+INSERT INTO dipendenti (nome, data_assunzione, data_nascita, stipendio) VALUES
+    ('Luca Ferrari', '2020-03-15', '1990-05-20', 2500.00),
+    ('Giulia Colombo', '2018-07-01', '1985-11-10', 3200.00),
+    ('Alessandro Ricci', '2022-01-10', '1995-03-25', 2100.00),
+    ('Francesca Marino', '2019-09-20', '1988-08-15', 2800.00),
+    ('Roberto Greco', '2021-06-01', '1992-12-05', 2400.00);
+
+
+-- ESERCIZIO 1: Calcolare i giorni tra ordine e consegna
+-- Mostra cliente, data_ordine, data_consegna e i giorni di attesa
+
+SELECT 
+    cliente,
+    data_ordine,
+    data_consegna,
+    JULIANDAY(data_consegna) - JULIANDAY(data_ordine) AS giorni_attesa
+FROM ordini;
+
+
+-- ESERCIZIO 2: Trovare gli ordini del mese corrente
+-- Seleziona tutti gli ordini effettuati nel mese corrente
+
+SELECT *
+FROM ordini
+WHERE strftime('%Y-%m', data_ordine) = strftime('%Y-%m', 'now');
+
+
+-- ESERCIZIO 3: Calcolare l'età dei dipendenti
+-- Mostra nome del dipendente e la sua età in anni
+
+SELECT 
+    nome,
+    data_nascita,
+    (JULIANDAY('now') - JULIANDAY(data_nascita)) / 365.25 AS eta_anni
+FROM dipendenti;
+
+
+-- ESERCIZIO 4: Trovare gli ordini dell'ultimo trimestre
+-- Seleziona ordini degli ultimi 3 mesi
+
+SELECT *
+FROM ordini
+WHERE data_ordine >= DATE('now', '-3 months');
+
+
+-- ESERCIZIO 5: Estrarre il giorno della settimana
+-- Mostra cliente, data_ordine e il nome del giorno (0=Domenica, 6=Sabato)
+
+SELECT 
+    cliente,
+    data_ordine,
+    CASE CAST(strftime('%w', data_ordine) AS INTEGER)
+        WHEN 0 THEN 'Domenica'
+        WHEN 1 THEN 'Lunedì'
+        WHEN 2 THEN 'Martedì'
+        WHEN 3 THEN 'Mercoledì'
+        WHEN 4 THEN 'Giovedì'
+        WHEN 5 THEN 'Venerdì'
+        WHEN 6 THEN 'Sabato'
+    END AS giorno_settimana
+FROM ordini;
+
+
+-- ESERCIZIO 6: Calcolare gli anni di servizio
+-- Mostra dipendenti con più di 4 anni di anzianità
+
+SELECT 
+    nome,
+    data_assunzione,
+    (JULIANDAY('now') - JULIANDAY(data_assunzione)) / 365.25 AS anni_servizio
+FROM dipendenti
+WHERE (JULIANDAY('now') - JULIANDAY(data_assunzione)) / 365.25 > 4;
+
+
+-- ESERCIZIO 7: Aggiungere 30 giorni a una data
+-- Calcola la data di scadenza pagamento (30 giorni dopo l'ordine)
+
+SELECT 
+    cliente,
+    data_ordine,
+    DATE(data_ordine, '+30 days') AS scadenza_pagamento
+FROM ordini;
+
+
+-- ESERCIZIO 8: Raggruppare ordini per mese
+-- Conta quanti ordini per ogni mese e calcola il totale
+
+SELECT 
+    strftime('%Y-%m', data_ordine) AS mese,
+    COUNT(*) AS numero_ordini,
+    SUM(importo) AS totale_vendite
+FROM ordini
+GROUP BY strftime('%Y-%m', data_ordine)
+ORDER BY mese;
+
+
+-- ESERCIZIO 9: Trovare i compleanni del mese corrente
+-- Seleziona dipendenti che compiono gli anni questo mese
+
+SELECT 
+    nome,
+    data_nascita,
+    strftime('%d', data_nascita) AS giorno_compleanno
+FROM dipendenti
+WHERE strftime('%m', data_nascita) = strftime('%m', 'now');
+
+
+-- ESERCIZIO 10: Calcolare la differenza in settimane
+-- Mostra ordini con il numero di settimane tra ordine e consegna
+
+SELECT 
+    cliente,
+    data_ordine,
+    data_consegna,
+    (JULIANDAY(data_consegna) - JULIANDAY(data_ordine)) / 7.0 AS settimane_attesa
+FROM ordini;

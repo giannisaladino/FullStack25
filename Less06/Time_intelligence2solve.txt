@@ -1,0 +1,67 @@
+CREATE TABLE ordini (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cliente STRING,
+    data_ordine DATE,
+    data_consegna DATE,
+    importo DECIMAL(10,2)
+);
+
+CREATE TABLE dipendenti (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome STRING,
+    data_assunzione DATE,
+    data_nascita DATE,
+    stipendio DECIMAL(10,2)
+);
+
+-- Inserimento dati di esempio
+INSERT INTO ordini (cliente, data_ordine, data_consegna, importo) VALUES
+    ('Mario Rossi', '2024-10-01', '2024-10-05', 150.00),
+    ('Laura Bianchi', '2024-10-15', '2024-10-20', 320.50),
+    ('Giovanni Verdi', '2024-09-20', '2024-09-25', 89.99),
+    ('Anna Neri', '2024-11-01', '2024-11-08', 450.00),
+    ('Paolo Gialli', '2024-10-25', '2024-10-30', 275.80),
+    ('Sofia Blu', '2024-08-10', '2024-08-15', 199.99),
+    ('Marco Viola', '2024-12-05', '2024-12-12', 520.00);
+
+INSERT INTO dipendenti (nome, data_assunzione, data_nascita, stipendio) VALUES
+    ('Luca Ferrari', '2020-03-15', '1990-05-20', 2500.00),
+    ('Giulia Colombo', '2018-07-01', '1985-11-10', 3200.00),
+    ('Alessandro Ricci', '2022-01-10', '1995-03-25', 2100.00),
+    ('Francesca Marino', '2019-09-20', '1988-08-15', 2800.00),
+    ('Roberto Greco', '2021-06-01', '1992-12-05', 2400.00);
+
+
+-- ESERCIZIO 1: Calcolare i giorni tra ordine e consegna
+-- Mostra cliente, data_ordine, data_consegna e i giorni di attesa
+
+
+
+-- ESERCIZIO 2: Trovare gli ordini del mese corrente
+-- Seleziona tutti gli ordini effettuati nel mese corrente
+
+
+-- ESERCIZIO 3: Calcolare l'età dei dipendenti
+-- Mostra nome del dipendente e la sua età in anni
+
+
+-- ESERCIZIO 4: Trovare gli ordini dell'ultimo trimestre
+-- Seleziona ordini degli ultimi 3 mesi
+
+-- ESERCIZIO 5: Estrarre il giorno della settimana
+-- Mostra cliente, data_ordine e il nome del giorno (0=Domenica, 6=Sabato)
+
+-- ESERCIZIO 6: Calcolare gli anni di servizio
+-- Mostra dipendenti con più di 4 anni di anzianità
+
+-- ESERCIZIO 7: Aggiungere 30 giorni a una data
+-- Calcola la data di scadenza pagamento (30 giorni dopo l'ordine)
+
+-- ESERCIZIO 8: Raggruppare ordini per mese
+-- Conta quanti ordini per ogni mese e calcola il totale
+
+-- ESERCIZIO 9: Trovare i compleanni del mese corrente
+-- Seleziona dipendenti che compiono gli anni questo mese
+
+-- ESERCIZIO 10: Calcolare la differenza in settimane
+-- Mostra ordini con il numero di settimane tra ordine e consegna
