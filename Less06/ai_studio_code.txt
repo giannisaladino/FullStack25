@@ -1,0 +1,2 @@
+implementation platform('com.google.cloud:libraries-bom:26.70.0')
+implementation 'com.google.cloud:google-cloud-bigquery'
