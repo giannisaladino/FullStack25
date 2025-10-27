@@ -1,0 +1,115 @@
+## 20 Esercizi Intermedi con BigQuery Public Datasets
+
+Parte 1: GROUP BY (Esercizi 1-7)
+
+Esercizio 1: Analisi delle nascite per anno
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+-- Calcola il numero totale di nascite per ogni anno
+
+
+
+Esercizio 2: Nomi più popolari per genere
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+-- Trova i 10 nomi più popolari per ogni genere
+
+
+
+
+Esercizio 3: Media delle temperature per stazione meteo
+-- Dataset: bigquery-public-data.noaa_gsod
+-- Calcola la temperatura media per ogni stazione nell'anno 2020
+
+
+
+
+Esercizio 4: Conteggio citazioni GitHub per linguaggio
+-- Dataset: bigquery-public-data.github_repos
+-- Conta i repository per linguaggio
+
+
+
+Esercizio 5: Analisi criminalità Chicago per tipo
+-- Dataset: bigquery-public-data.chicago_crime
+-- Raggruppa i crimini per tipo primario e anno
+
+
+
+Esercizio 6: Spesa media dei taxi NYC per distretto
+-- Dataset: bigquery-public-data.new_york_taxi_trips
+-- Calcola la tariffa media per distretto di pickup
+
+
+Esercizio 7: Aggregazione con ROLLUP
+-- Analisi gerarchica delle nascite per stato e anno
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+
+
+Parte 2: JOIN (Esercizi 8-14)
+
+Esercizio 8: JOIN tra tabelle GitHub
+-- Unisce informazioni su repository e linguaggi
+-- Dataset: bigquery-public-data.github_repos
+
+
+Esercizio 9: LEFT JOIN per analisi completezza dati
+-- Controlla quali stazioni meteo hanno dati mancanti da stazioni e gsod2020
+-- Dataset: bigquery-public-data.noaa_gsod
+
+
+
+Esercizio 11: Self JOIN per comparazioni
+-- Confronta nomi maschili e femminili con lo stesso spelling
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+
+
+Esercizio 12: Multiple JOIN
+-- Combina dati da più tabelle GitHub
+-- Dataset: bigquery-public-data.github_repos
+
+
+Esercizio 13: JOIN con aggregazione
+-- Conta i commits per linguaggio
+-- Dataset: bigquery-public-data.github_repos
+
+
+Esercizio 14: JOIN con subquery
+-- Trova i nomi più popolari che sono usati da entrambi i generi
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+
+
+Parte 3: VIEWS (Esercizi 15-20)
+
+Esercizio 15: VIEW semplice per dati filtrati
+-- Crea una view dei nomi popolari degli ultimi 5 anni recent_popular_names
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+
+
+Esercizio 16: VIEW con JOIN
+-- View che combina repository e linguaggi repo_languages_summary
+-- Dataset: bigquery-public-data.github_repos.languages
+
+Esercizio 17: VIEW con aggregazione complessa
+-- View per statistiche meteo mensili monthly_weather_stats
+-- Dataset: bigquery-public-data.noaa_gsod.gsod2020
+
+Esercizio 18: Materialized VIEW per performance
+-- View materializzata per query frequenti
+-- Dataset: bigquery-public-data.chicago_crime.crime
+
+
+Esercizio 19: VIEW con window functions
+-- View con ranking dei nomi per anno
+-- Dataset: bigquery-public-data.usa_names.usa_1910_current
+
+
+-- Query per trovare i top 10 di ogni anno
+SELECT * FROM `tuo-progetto.tuo_dataset.name_rankings`
+WHERE rank <= 10
+ORDER BY year DESC, gender, rank;
+
+Esercizio 20: VIEW con UNION
+-- View che unisce dati da più anni
+-- Dataset: bigquery-public-data.noaa_gsod.gsod2020
+
+
+
